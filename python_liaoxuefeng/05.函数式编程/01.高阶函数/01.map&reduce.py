@@ -13,7 +13,7 @@
 
 
 #reduce 
-# from functools import reduce
+from functools import reduce
 # def add(x, y):
 #      return x + y
 
@@ -55,7 +55,43 @@
 
 
 # 例题：利用map()函数，把用户输入的不规范的英文名字，变为首字母大写，其他小写的规范名字。
-def normalize(name):
-    return name[0].upper() + name[1:].lower()
-L1 = ['adam', 'LISA', 'barT']
-print(list(map(normalize, L1)))
+# def normalize(name):
+#     return name[0].upper() + name[1:].lower()
+# L1 = ['adam', 'LISA', 'barT']
+# print(list(map(normalize, L1)))
+
+
+
+#实现连续相乘
+# def prod(L):
+#     return reduce(lambda x,y:x*y,L)
+# #测试代码
+# print('3 * 5 * 7 * 9 =', prod([3, 5, 7, 9]))
+# if prod([3, 5, 7, 9]) == 945:
+#     print('测试成功!')
+# else:
+#     print('测试失败!')
+
+
+
+
+#ndex() 方法检测字符串中是否包含子字符串 str 
+# 如果指定 beg（开始） 和 end（结束） 范围，则检查是否包含在指定范围内，该方法与 python find()方法一样，只不过如果str不在 string中会报一个异常。
+def str2float(s):
+    index=s.index('.')
+    zhenghshu=s[:index]
+    xiaoshu=s[index+1:]
+    def char2float(c):
+        DIGITS = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
+        return DIGITS[c]
+    
+    return reduce(lambda x,y:10*x+y,map(char2float,zhenghshu))+reduce(lambda x,y:10*x+y,map(char2float,xiaoshu))/(10**(len(xiaoshu)))
+
+# print(str2float('123.456'))
+print('str2float(\'123.456\') =', str2float('123.456'))
+if abs(str2float('123.456') - 123.456) < 0.00001:
+    print('测试成功!')
+else:
+    print('测试失败!')
+
+
