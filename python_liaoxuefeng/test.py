@@ -21,11 +21,24 @@ from collections.abc import Iterable
 #         sum = sum + n * n
 #     return sum
 
-dic={'eggs': 2, 'sausage': 1, 'bacon': 1, 'spam': 500}
-keys = dic.keys()
-values = dic.values()
-items = dic.items()
-for key,value in items:
-    print(key,value)
-    # print(i)       #挨个tuple形式的对象
-    # print(list(i)) #挨个list形式的对象
+# dic={'eggs': 2, 'sausage': 1, 'bacon': 1, 'spam': 500}
+# keys = dic.keys()
+# values = dic.values()
+# items = dic.items()
+# for key,value in items:
+#     print(key,value)
+#     # print(i)       #挨个tuple形式的对象
+#     # print(list(i)) #挨个list形式的对象
+
+str="     我的骨骼说我爱你   "
+str1='''
+    蝉鸣消去的时候
+荒诞时空里的某某\n
+少年不会再错的题
+梧桐被风吹的声音
+仲夏夜荒原烧不尽
+我的骨骼说我爱你
+你好吗
+一切都还来得及
+'''
+
